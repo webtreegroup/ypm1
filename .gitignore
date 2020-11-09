@@ -6,6 +6,7 @@ node_modules
 $RECYCLE.BIN/
 .sass-cache/
 *.css.map
-dist/
 .settings/
 .vscode/
+
+# dist/
