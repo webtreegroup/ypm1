@@ -1,0 +1,17 @@
+@import './consts.scss';
+
+.popup {
+    width: $popup_width_xs;
+    background: $popup_bg_color;
+    box-shadow: $popup_box_shadow;
+    border-radius: $popup_border_radius;
+    padding: $popup_padding;
+
+    &__title {
+        font-size: $popup_title_font_size;
+        font-weight: $popup_title_font_weight;
+        line-height: $popup_title_font_size;
+        color: $app_text_color;
+        text-align: center;
+    }
+}

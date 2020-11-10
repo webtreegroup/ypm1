@@ -4,14 +4,13 @@
   "description": "",
   "main": "src/js/app.js",
   "scripts": {
-    "scss": "node-sass --output-style compressed -o dist/css src/scss",
+    "scss": "node-sass --output-style expanded -o dist/css src/scss",
     "autoprefixer": "postcss -u autoprefixer -r dist/css/*",
-    "uglify": "mkdir -p dist/js && uglifyjs src/js/*.js -m -o dist/js/app.js && uglifyjs src/js/*.js -m -c -o dist/js/app.min.js",
     "build:css": "npm run scss && npm run autoprefixer",
     "build:js": "npm run uglify",
     "build:all": "npm run build:css && npm run build:js",
     "watch:css": "onchange \"src/scss/*.scss\" -- npm run build:css",
-    "watch:js": "onchange 'src/js/*.js' -- npm run build:js",
+    "watch:js": "onchange \"src/js/*.js\" -- npm run build:js",
     "server": "browser-sync start --server 'dist' --files 'dist'",
     "start": "npm-run-all --parallel server watch:css watch:js"
   },
@@ -24,8 +23,7 @@
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
     "postcss": "^8.1.6",
-    "postcss-cli": "^8.2.0",
-    "uglify-js": "^3.11.5"
+    "postcss-cli": "^8.2.0"
   },
   "dependencies": {}
 }
