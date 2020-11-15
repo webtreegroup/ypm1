@@ -19,6 +19,14 @@ a, button {
     transition: $transition_ms;
 }
 
+a {
+    color: $link_color;
+
+    &:visited {
+        color: $link_color;
+    }
+}
+
 .signin-page, .login-page {
     display: flex;
     justify-content: center;
@@ -61,11 +69,8 @@ a, button {
                 opacity: 0.7;
             }
         }
-
-        svg {
-            width: 12px;
-            height: 12px;
-        }
+    
+        @include svg_sizes(12px);
 
         .btn {
             position: absolute;
@@ -90,10 +95,10 @@ a, button {
             display: flex;
             align-items: center;
 
+            @include svg_sizes(10px);
+
             svg {
                 margin-left: 5px;
-                width: 10px;
-                height: 10px;
             }
 
             &:hover, &:focus, &:active {
@@ -235,9 +240,9 @@ a, button {
             margin: 0;
         }
 
+        @include svg_sizes(47px);
+
         svg {
-            width: 47px;
-            height: 47px;
             flex-shrink: 0;
             margin-right: 10px;
             border-radius: 50%;
@@ -285,10 +290,7 @@ a, button {
             background-color: $chats_list_border_color;
         }
 
-        svg {
-            width: 16px;
-            height: 16px;
-        }
+        @include svg_sizes;
     }
 
     .menu {
@@ -357,4 +359,81 @@ a, button {
 
 .btn-send {
     @include svg_sizes();
+}
+
+.profile-page {
+    display: flex;
+
+    &__out {
+        width: 70px;
+        flex-shrink: 0;
+        background-color: $chats_list_bg_color;
+        border-right: $chats_list_border;
+        height: 100vh;
+
+        a {
+            display: flex;
+            @include vh_align();
+
+            &:hover {
+                opacity: 0.7;
+            }
+
+            @include svg_sizes(32px);
+        }
+    }
+}
+
+.profile-options {
+    flex-grow: 1;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__image {
+        margin-bottom: 20px;
+
+        @include svg_sizes(100px);
+    }
+
+    &__fields {
+        max-width: 500px;
+        width: 100%;
+
+        input {
+            &:disabled {
+                padding-left: 10px;
+            }
+        }
+    }
+
+    &__actions {
+        max-width: 500px;
+        width: 100%;
+        padding-top: 20px;
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                margin-bottom: 10px;
+            }
+
+            a {
+                text-decoration: none;
+
+                b {
+                    color: red;
+                }
+
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
 }

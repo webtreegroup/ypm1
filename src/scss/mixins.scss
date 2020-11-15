@@ -12,9 +12,9 @@
     justify-content: space-between;
 }
 
-@mixin svg_sizes {
+@mixin svg_sizes($s: 16px) {
     svg {
-        width: 16px;
-        height: 16px;
+        width: $s;
+        height: $s;
     }
 }
