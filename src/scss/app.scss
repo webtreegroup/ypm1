@@ -35,7 +35,7 @@ a, button {
     width: 30%;
     height: 100vh;
     background-color: $chats_list_bg_color;
-    border-right: 1px solid $chats_list_border_color;
+    border-right: $chats_list_border;
     overflow: auto;
 
     header {
@@ -104,14 +104,27 @@ a, button {
 }
 
 .chats-list-item {
-    border-top: 1px solid $chats_list_border_color;
-    border-bottom: 1px solid $chats_list_border_color;
+    border-top: $chats_list_border;
+    border-bottom: $chats_list_border;
     padding: 10px 0;
     position: relative;
     display: flex;
 
     &:last-child {
         border-bottom: 0;
+    }
+
+    &_current {
+        &:before {
+            content: "";
+            z-index: 0;
+            position: absolute;
+            top: 2px;
+            bottom: 2px;
+            left: -5px;
+            right: -5px;
+            background-color: $chats_list_item_current_bg_color;
+        }
     }
 
     &__title {
@@ -152,7 +165,9 @@ a, button {
         height: 47px;
         flex-shrink: 0;
         border-radius: 50%;
-        border: 1px solid $chats_list_border_color;
+        border: $chats_list_border;
+        position: relative;
+        z-index: 1;
 
         &_empty {
             svg {
@@ -164,16 +179,182 @@ a, button {
     &__body {
         padding-left: 10px;
         padding-right: 45px;
+        position: relative;
+        z-index: 1;
     }
 }
 
 .chat-history {
+    padding: 20px;
     width: 70%;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    &__time {
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 12px;
+        color: $input_label_color;
+    }
+
+    header {
+        border-bottom: $chats_list_border;
+        padding-bottom: 10px;
+        @include v_align();
+    }
+
+    footer {
+        border-top: $chats_list_border;
+        padding-top: 20px;
+        @include v_align();
+
+        .input-control {
+            flex-grow: 1;
+            margin: 0 10px;
+        }
+    }
+
+    &__body {
+        padding: 40px 0;
+        flex-grow: 1;
+    }
 
     &__placeholder {
         @include vh_align();
         font-size: 12px;
         color: $input_label_color;
     }
+
+    &__chat-name {
+        display: flex;
+        align-items: center;
+        
+        h3 {
+            font-size: 13px;
+            margin: 0;
+        }
+
+        svg {
+            width: 47px;
+            height: 47px;
+            flex-shrink: 0;
+            margin-right: 10px;
+            border-radius: 50%;
+            opacity: 0.2;
+        }
+    }
+}
+
+.chat-history-item {
+    max-width: 400px;
+    background: $chats_list_item_bg_color;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    margin-bottom: 20px;
+
+    &_own {
+        float: right;
+        background-color: $chats_list_item_current_bg_color;
+    }
+
+    &__is-read {
+        @include svg_sizes();
+        margin-left: 20px;
+    }
+
+    &__footer {
+        display: flex;
+        @include v_align();
+    }
+}
+
+.chat-actions {
+    position: relative;
+
+    &__toggle-menu {
+        width: 25px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+
+        &:hover {
+            background-color: $chats_list_border_color;
+        }
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    .menu {
+        position: absolute;
+        right: 0;
+        top: 30px;
+        width: 210px;
+    }
+}
+
+.chat-attachment {
+    position: relative;
+
+    &__toggle-menu {
+        @include svg_sizes();
+    }
+
+    .menu {
+        position: absolute;
+        left: 0;
+        bottom: 35px;
+        width: 160px;
+    }
+}
+
+.menu {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
+    border-radius: 12px;
+    padding: 15px;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin-bottom: 15px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @include svg_sizes();
+
+            svg {
+                flex-shrink: 0;
+                margin-right: 10px;
+            }
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-size: 12px;
+            color: $app_text_color;
+            font-weight: 500;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+}
+
+.btn-send {
+    @include svg_sizes();
 }
