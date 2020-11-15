@@ -1,4 +1,5 @@
 @import './consts.scss';
+@import './mixins.scss';
 
 .popup {
     width: $popup_width_xs;
@@ -13,7 +14,6 @@
         font-size: $popup_title_font_size;
         font-weight: $popup_title_font_weight;
         line-height: $popup_title_font_size;
-        color: $app_text_color;
         text-align: center;
     }
 
