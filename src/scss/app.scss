@@ -437,3 +437,25 @@ a {
         }
     }
 }
+
+.page-404, .page-500 {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    h1 {
+        margin-top: 0;
+        font-size: 40px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    a {
+        font-size: 14px;
+    }
+}
