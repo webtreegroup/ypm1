@@ -6,6 +6,8 @@
     box-shadow: $popup_box_shadow;
     border-radius: $popup_border_radius;
     padding: $popup_padding;
+    display: flex;
+    flex-direction: column;
 
     &__title {
         font-size: $popup_title_font_size;
@@ -13,5 +15,27 @@
         line-height: $popup_title_font_size;
         color: $app_text_color;
         text-align: center;
+    }
+
+    &__body {
+        flex-grow: 1;
+    }
+
+    &__footer {
+        text-align: center;
+    }
+
+    a {
+        color: $link_color;
+        font-size: 11px;
+    }
+
+    &_login &__footer {
+        display: flex;
+        flex-direction: column;
+
+        .btn {
+            margin-bottom: 15px;
+        }
     }
 }

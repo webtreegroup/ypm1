@@ -2,6 +2,7 @@
 
 .input-control {
     position: relative;
+    margin-bottom: 20px;
 
     input {
         border: 0;
@@ -35,7 +36,7 @@
         display: flex;
         align-items: center;
         position: absolute;
-        color: #999999;
+        color: $input_label_color;
         transition: $transition_ms;
     }
 }
