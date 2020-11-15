@@ -438,13 +438,17 @@ a {
     }
 }
 
-.page-404, .page-500 {
+.page-404, .page-500, .index-page {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
+
+    ul {
+        text-align: left;
+    }
 
     h1 {
         margin-top: 0;
