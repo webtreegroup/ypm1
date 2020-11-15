@@ -3,7 +3,7 @@ class Popups {
 
     constructor(elemId){
         this._elem = document.getElementById(elemId)
-        this._elem.querySelector('.popup__close').addEventListener('click', () => {
+        this._elem?.querySelector('.popup__close').addEventListener('click', () => {
             this.hide()
         })
     }
