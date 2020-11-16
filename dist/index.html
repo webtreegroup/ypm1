@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset-style.css">
     <link rel="stylesheet" href="./css/app.css">
 </head>
-<body class="app">
-    <main class="authorization">
+<body>
+    <main class="index-page">
 
-        <div class="popup auth-form">
-            <h3 class="popup__title">Вход</h3>
-
-            <div class="popup__body">
-                <form>
-                    <div class="input-control">
-                        <input id="login" type="text" name="login">
-                        <label for="login">Логин</label>
-                    </div>
-                </form>
-            </div>
-        </div>
+        <section>
+            <h1>Добро пожаловать!</h1>
+            <h4>Список доступных страниц</h4>
+            <ul>
+                <li><a href="./login.html">Вход</a></li>
+                <li><a href="./signin.html">Регистрация</a></li>
+                <li><a href="./chats.html">Список чатов</a></li>
+                <li><a href="./search.html">Поиск чата</a></li>
+                <li><a href="./chat-single.html">Конкретный чат</a></li>
+                <li><a href="./profile.html">Профиль пользователя</a></li>
+                <li><a href="./profile-edit.html">Редактирование данных профиля</a></li>
+                <li><a href="./profile-edit-pass.html">Редактирование пароля профиля</a></li>
+                <li><a href="./404.html">404</a></li>
+                <li><a href="./500.html">500</a></li>
+            </ul>
+        </section>
 
     </main>
-
-    <script src="./js/app.js"></script>
-    <script src="./js/controls.js"></script>
 </body>
 </html>
