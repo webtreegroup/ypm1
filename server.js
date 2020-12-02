@@ -1,12 +1,18 @@
-const path = require('path')
-// server.js
 const express = require('express')
 
 const app = express()
 const PORT = 4000
 
-app.use(express.static('./'))
+app.set('view engine', 'pug')
 
-app.listen(PORT, function() {
-    console.log(`Example app listening on port ${PORT}!`)
+app.use(express.static(`${__dirname}/static`))
+
+app.get("/default", function(request, response){
+    response.render("default", {
+        title: "Default page"
+    })
+})
+
+app.listen(PORT, () => {
+    console.log(`Start in ${PORT}!`)
 })
