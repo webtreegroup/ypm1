@@ -1,0 +1,14 @@
+extends default.pug
+
+include ../components/button/popup.pug
+include ../components/button/inputControl.pug
+
+block content
+    +Popup('Вход', 'popup-wrap_active')
+        form.ajax-form
+            +InputControl('login', 'Логин', 'text')
+            +InputControl('password', 'Пароль', 'password')
+
+            .popup__footer
+                +Button('Авторизоваться', 'primary', 'submit')
+                a(href='./signin') Нет аккаунта?

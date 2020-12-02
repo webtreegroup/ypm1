@@ -7,9 +7,15 @@ app.set('view engine', 'pug')
 
 app.use(express.static(`${__dirname}/static`))
 
-app.get("/default", function(request, response){
-    response.render("default", {
-        title: "Default page"
+app.get("/login", function(request, response){
+    response.render("pages/login", {
+        title: "login page"
+    })
+})
+
+app.get("/signin", function(request, response){
+    response.render("pages/signin", {
+        title: "signin page"
     })
 })
 

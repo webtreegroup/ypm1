@@ -1,0 +1,9 @@
+include button.pug
+
+mixin Popup(title = 'Заголовок окна', className, sendBtnText)
+    div(class=`popup-wrap ${className}`)
+        .popup
+            h3.popup__title #{title}
+
+            .popup__body
+                block
