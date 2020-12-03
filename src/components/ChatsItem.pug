@@ -1,0 +1,15 @@
+mixin ChatsItem(chat)
+    div(class=`chats-item${chat.isCurrent ? ' chats-item_current' : ''}`)
+        div(class=`chats-item__img${!chat.img ? ' chats-item__img_empty' : ''}`)
+            include ../svg/icon-user.svg
+
+        .chats-item__body
+            h5.chats-item__title #{chat.name}
+            span.chats-item__desc 
+                if chat.isOwnMessage
+                    b Вы: 
+                | #{chat.lastMessage}
+
+        time.chats-item__time #{chat.time}
+        if chat.unread
+            .chats-item__unread #{chat.unread}

@@ -1,0 +1,11 @@
+main(class=`chat-history ${!chatMessages ? 'chat-history_not-selected' : '' }`)
+    if chatMessages
+        | Сообщения...
+    else
+        .chat-history__placeholder
+            | Выберите чат чтобы отправить сообщение
+    //- header
+    //-     .chat-history__chat-name
+    //-         include ../svg/icon-user.svg
+
+    //-         span Вадим

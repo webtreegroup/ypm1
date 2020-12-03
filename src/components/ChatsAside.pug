@@ -1,0 +1,11 @@
+aside.chats
+    header
+        .chats__to-profile
+            a(href='./profile') 
+                | Профиль
+                include ../svg/icon-arrow-right.svg
+
+        include ChatsSearch.pug
+    
+    section.chats__body
+        block chats
