@@ -1,0 +1,7 @@
+include Button.pug
+
+form.chats__search
+    input(type='text' name='chatName' id='chatName')
+
+    +Button('no-style', 'submit')
+        include ../svg/icon-search.svg

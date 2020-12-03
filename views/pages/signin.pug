@@ -1,19 +1,21 @@
 extends default.pug
 
-include ../components/button/popup.pug
-include ../components/button/inputControl.pug
+include ../components/Popup.pug
+include ../components/InputControl.pug
 
 block content
-    +Popup('Вход', 'popup-wrap_active')
-        form.ajax-form
-            +InputControl('email', 'Почта', 'email')
-            +InputControl('login', 'Логин', 'text')
-            +InputControl('first_name', 'Имя', 'text')
-            +InputControl('second_name', 'Фамилия', 'text')
-            +InputControl('phone', 'Телефон', 'text')
-            +InputControl('password', 'Пароль', 'password')
-            +InputControl('password_confirm', 'Пароль (ещё раз)', 'password')
+    .signin-page
+        +Popup('Вход', 'popup-wrap_active')
+            form.ajax-form
+                +InputControl('email', 'Почта', 'email')
+                +InputControl('login', 'Логин', 'text')
+                +InputControl('first_name', 'Имя', 'text')
+                +InputControl('second_name', 'Фамилия', 'text')
+                +InputControl('phone', 'Телефон', 'text')
+                +InputControl('password', 'Пароль', 'password')
+                +InputControl('password_confirm', 'Пароль (ещё раз)', 'password')
 
-            .popup__footer
-                +Button('Зарегистрироваться', 'primary', 'submit')
-                a(href='./login') Войти
+                .popup__footer
+                    +Button('primary', 'submit')
+                        | Зарегистрироваться
+                    a(href='./login') Войти
