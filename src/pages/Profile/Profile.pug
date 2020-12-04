@@ -1,0 +1,16 @@
+extends ../default.pug
+
+append styles
+    link(rel='stylesheet' href='../../css/Pages/Profile/Profile.css')
+
+block content
+    .profile-page
+        aside.profile-page__out
+            include ../../svg/icon-back.svg
+
+        main.profile-options
+            header.profile-options__image
+                include ../../svg/icon-user.svg
+
+            section.profile-options__fields
+                +InputControl('email', 'Почта', 'email')

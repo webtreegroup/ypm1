@@ -41,6 +41,12 @@ app.get("/chats/:id", function(_request, response){
     })
 })
 
+app.get("/profile", function(_request, response){
+    response.status(200).render("pages/Profile/Profile", {
+        title: "Профиль пользователя",
+    })
+})
+
 /**
  * TODO: стр. "404" и "500" будут отображаться одним и тем же шаблоном
  */

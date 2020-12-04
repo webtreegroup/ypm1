@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "scss": "node-sass --output-style expanded -o static/css src",
-    "autoprefixer": "postcss -u autoprefixer -r static/css/*",
+    "scss": "node-sass --output-style expanded -o build/css src",
+    "autoprefixer": "postcss -u autoprefixer -r build/css",
     "build:css": "npm run scss && npm run autoprefixer",
     "build:all": "npm run build:css"
   },

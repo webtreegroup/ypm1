@@ -3,7 +3,7 @@
   "compilerOptions": {
     "target": "es5",
     "rootDir": "./",
-    "outDir": "./static",
+    "outDir": "./build",
     "esModuleInterop": true,
     "strict": true,
     "noUnusedLocals": true,
