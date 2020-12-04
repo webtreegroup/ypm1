@@ -1,8 +1,7 @@
-const { getChatsData, messagesData } = require('./static/js/mocks/chats.mock')
+import { getChatsData, messagesData } from './mocks/chats.mock'
+import express from 'express'
 
-const express = require('express')
-
-const app = express()
+const app: express.Application = express()
 const PORT = 4000
 
 app.set('view engine', 'pug')
@@ -11,12 +10,14 @@ app.set('views', './src')
 app.use(express.static(`${__dirname}/static`))
 
 app.get("/login", function(request, response){
+    console.log(request)
     response.render("pages/Login", {
         title: "Вход"
     })
 })
 
 app.get("/signin", function(request, response){
+    console.log(request)
     response.render("pages/Signin", {
         title: "Авторизация"
     })
@@ -28,6 +29,7 @@ app.get("/signin", function(request, response){
  * при получении данных мы будем делать ререндер списка чатов
  */
 app.get("/chats", function(request, response){
+    console.log(request)
     response.render("pages/Chats/Chats", {
         title: "Чаты",
         chatsData: getChatsData()
@@ -35,6 +37,7 @@ app.get("/chats", function(request, response){
 })
 
 app.get("/chats/:id", function(request, response){
+    console.log(request)
     response.render("pages/Chats/Chats", {
         title: "Текущий чат",
         chatsData: getChatsData(true),
@@ -46,7 +49,8 @@ app.get("/chats/:id", function(request, response){
  * TODO: стр. "404" и "500" будут отображаться одним и тем же шаблоном
  */
 app.get("*", function(request, response){
-    res.status(404).render("pages/Error", {
+    console.log(request)
+    response.status(404).render("pages/Error", {
         title: "Страница не найдена",
     })
 })

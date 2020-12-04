@@ -1,6 +1,6 @@
 import { IChat, IMessage } from '../src/pages/Chats/Chats.model'
 
-export const getChatsData = (isCurrent: boolean): IChat[] => [
+export const getChatsData = (isCurrent?: boolean): IChat[] => [
     { 
         name: 'Андрей', 
         lastMessage: 'И Human Interface Guidelines и Material Design рекомендуют...', 
