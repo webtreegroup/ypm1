@@ -1,3 +1,7 @@
+include ../components/Button/Button.pug
+include ../components/Popup/Popup.pug
+include ../components/InputControl/InputControl.pug
+
 doctype html
 html(lang='ru')
     head
@@ -6,11 +10,11 @@ html(lang='ru')
         
         block styles
             link(href='https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet')
-            link(rel='stylesheet' href='../../css/reset-style.css')
-            link(rel='stylesheet' href='../../css/app.css')
-            link(rel='stylesheet' href='../../css/popups.css')
-            link(rel='stylesheet' href='../../css/buttons.css')
-            link(rel='stylesheet' href='../../css/controls.css')
+            link(rel='stylesheet' href='../../css/core/style/reset-style.css')
+            link(rel='stylesheet' href='../../css/core/style/app.css')
+            link(rel='stylesheet' href='../../css/components/Popup/Popup.css')
+            link(rel='stylesheet' href='../../css/components/button/Button.css')
+            link(rel='stylesheet' href='../../css/components/InputControl/InputControl.css')
         title #{title}
 
     body

@@ -4,11 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "scss": "node-sass --output-style expanded -o static/css src/scss",
+    "scss": "node-sass --output-style expanded -o static/css src",
     "autoprefixer": "postcss -u autoprefixer -r static/css/*",
     "build:css": "npm run scss && npm run autoprefixer",
-    "build:js": "",
-    "build:all": "npm run build:css && npm run build:js"
+    "build:all": "npm run build:css"
   },
   "author": "web-tree@yandex.ru",
   "license": "ISC",
