@@ -3,9 +3,10 @@ aside.chats
         .chats__to-profile
             a(href='./profile') 
                 | Профиль
-                include ../svg/icon-arrow-right.svg
+                include ../../../svg/icon-arrow-right.svg
 
         include ChatsSearch.pug
     
     section.chats__body
-        block chats
+        each chat in chatsData
+            +ChatsItem(chat)

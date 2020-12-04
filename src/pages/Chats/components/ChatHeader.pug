@@ -1,0 +1,19 @@
+header
+    .chat-history__chat-name
+        include ../../../svg/icon-user.svg
+        span Вадим
+
+    nav.chat-actions
+        +Button('no-style chat-actions__toggle-menu')
+            include ../../../svg/icon-chat-menu.svg
+
+        .menu
+            ul
+                li
+                    a(href='#' class='add-user')
+                        include ../../../svg/icon-add-user.svg
+                        | Добавить пользователя
+                li
+                    a(href='#' class='remove-user')
+                        include ../../../svg/icon-remove-user.svg
+                        | Удалить пользователя

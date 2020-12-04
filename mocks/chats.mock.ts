@@ -1,25 +1,28 @@
-export const getChatsData = (isCurrent) => [
-    {
-        name: 'Андрей',
-        lastMessage: 'И Human Interface Guidelines и Material Design рекомендуют...',
-        time: '10:49',
-        unread: 4
+import { IChat, IMessage } from '../src/pages/Chats/Chats.model'
+
+export const getChatsData = (isCurrent: boolean): IChat[] => [
+    { 
+        name: 'Андрей', 
+        lastMessage: 'И Human Interface Guidelines и Material Design рекомендуют...', 
+        time: '10:49', 
+        unread: 4 
     },
-    {
-        name: 'Вадим',
-        lastMessage: 'Круто!',
-        time: 'Пт',
+    { 
+        name: 'Вадим', 
+        lastMessage: 'Круто!', 
+        time: 'Пт', 
         isOwnMessage: true,
         isCurrent: isCurrent
     },
-    {
-        name: 'Day.',
-        lastMessage: 'Так увлёкся работой по курсу, что совсем забыл его анонсир...',
-        time: '1 Мая 2020',
-        unread: 100,
+    { 
+        name: 'Day.', 
+        lastMessage: 'Так увлёкся работой по курсу, что совсем забыл его анонсир...', 
+        time: '1 Мая 2020', 
+        unread: 100, 
     },
-];
-export const messagesData = [
+]
+
+export const messagesData: IMessage[] = [
     {
         check: true,
         time: '11:57',
@@ -31,5 +34,4 @@ export const messagesData = [
         text: `<p>Круто!</p>`,
         isOwn: true
     }
-];
-//# sourceMappingURL=chats.mock.js.map
+]

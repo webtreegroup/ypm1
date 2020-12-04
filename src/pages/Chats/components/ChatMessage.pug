@@ -1,0 +1,11 @@
+mixin ChatMessage(message)
+    article(class=`chat-history-item${message.isOwn ? ' chat-history-item_own' : ''}`)
+        .chat-history-item__desc
+            block
+
+        .chat-history-item__footer
+            time #{message.time}
+
+            if message.check
+                .chat-history-item__is-read
+                    include ../../../svg/icon-check.svg

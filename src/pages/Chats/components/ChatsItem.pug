@@ -1,7 +1,7 @@
 mixin ChatsItem(chat)
     div(class=`chats-item${chat.isCurrent ? ' chats-item_current' : ''}`)
         div(class=`chats-item__img${!chat.img ? ' chats-item__img_empty' : ''}`)
-            include ../svg/icon-user.svg
+            include ../../../svg/icon-user.svg
 
         .chats-item__body
             h5.chats-item__title #{chat.name}

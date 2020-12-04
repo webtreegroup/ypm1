@@ -1,0 +1,16 @@
+main(class=`chat-history ${!messagesData ? 'chat-history_not-selected' : '' }`)
+    if messagesData
+        include ChatHeader.pug
+        
+        section.chat-history__body
+            .chat-history__group
+                .chat-history__time 19 июня
+                each message in messagesData
+                    +ChatMessage(message)
+                        | !{message.text}
+
+        include ChatFooter.pug
+    else
+        .chat-history__placeholder
+            | Выберите чат чтобы отправить сообщение
+    

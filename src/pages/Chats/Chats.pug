@@ -1,0 +1,13 @@
+extends ../default.pug
+
+include ./components/ChatsItem.pug
+include ./components/ChatMessage.pug
+
+append styles
+    link(rel='stylesheet' href='../../css/Pages/Chats/Chats.css')
+
+block content
+    .chats-page
+        include ./components/ChatsAside.pug
+        include ./components/ChatsHistory.pug
+        
