@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.messagesData = exports.getChatsData = void 0;
-var e;
 var getChatsData = function (isCurrent) { return [
     {
         name: 'Андрей',
