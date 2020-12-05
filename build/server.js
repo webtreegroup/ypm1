@@ -1,7 +1,7 @@
 import { getChatsData, MESSAGES_DATA } from './src/pages/Chats/Chats.consts.js';
 import { LOGIN_FORM_CONTROLS } from './src/pages/Login/Login.consts.js';
 import { SIGNIN_FORM_CONTROLS } from './src/pages/Signin/Signin.consts.js';
-import { PROFILE_FORM_CONTROLS } from './src/pages/Profile/Profile.consts.js';
+import { PROFILE_FORM_CONTROLS, PROFILE_FORM_PASS_CONTROLS } from './src/pages/Profile/Profile.consts.js';
 import express from 'express';
 const app = express();
 const PORT = 4000;
@@ -52,8 +52,15 @@ app.get("/profile", function (_request, response) {
 });
 app.get("/profile/edit", function (_request, response) {
     response.status(200).render("pages/Profile/Profile", {
-        title: "Профиль пользователя",
+        title: "Профиль пользователя: редактирование",
         fields: PROFILE_FORM_CONTROLS,
+        isEditMode: true
+    });
+});
+app.get("/profile/edit-pass", function (_request, response) {
+    response.status(200).render("pages/Profile/Profile", {
+        title: "Профиль пользователя: редактирование пароля",
+        fields: PROFILE_FORM_PASS_CONTROLS,
         isEditMode: true
     });
 });

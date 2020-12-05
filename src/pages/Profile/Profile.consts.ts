@@ -8,3 +8,9 @@ export const PROFILE_FORM_CONTROLS: IInputControl[] = [
     { value: 'Иван', name: 'display_name', label: 'Имя в чате',  },
     { value: '+7 (909) 967 30 30', name: 'phone', label: 'Телефон',  },
 ]
+
+export const PROFILE_FORM_PASS_CONTROLS: IInputControl[] = [
+    { value: 'password', inputType: 'password', name: 'oldPassword', label: 'Старый пароль',  },
+    { value: 'password', inputType: 'password', name: 'newPassword', label: 'Новый пароль',  },
+    { value: 'password', inputType: 'password', name: 'passwordConfirm', label: 'Повторите новый пароль',  }
+]
