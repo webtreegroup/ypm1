@@ -13,6 +13,13 @@ app.set('views', './src')
 
 app.use(express.static('./'))
 
+app.get("/", function(_request, response){
+    response.status(200).render("pages/Main", {
+        title: "Главная страница",
+        fields: LOGIN_FORM_CONTROLS
+    })
+})
+
 app.get("/login", function(_request, response){
     response.status(200).render("pages/Login/Login", {
         title: "Вход",
@@ -51,6 +58,14 @@ app.get("/profile", function(_request, response){
     response.status(200).render("pages/Profile/Profile", {
         title: "Профиль пользователя",
         fields: PROFILE_FORM_CONTROLS
+    })
+})
+
+app.get("/profile/edit", function(_request, response){
+    response.status(200).render("pages/Profile/Profile", {
+        title: "Профиль пользователя",
+        fields: PROFILE_FORM_CONTROLS,
+        isEditMode: true
     })
 })
 

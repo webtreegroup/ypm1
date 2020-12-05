@@ -1,0 +1,23 @@
+extends default.pug
+
+block styles
+    link(href='https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet')
+    link(rel='stylesheet' href='/build/css/core/style/reset-style.css')
+    link(rel='stylesheet' href='/build/css/core/style/app.css')
+
+block content
+    .index-page
+        section
+            h1 Добро пожаловать!
+            h4 Список доступных страниц
+            ul
+                <li><a href="./login">Вход</a></li>
+                <li><a href="./signin">Регистрация</a></li>
+                <li><a href="./chats">Список чатов (Поиск чатов)</a></li>
+                <li><a href="./chats/1">Текущий чат</a></li>
+                <li><a href="./profile">Профиль пользователя</a></li>
+                <li><a href="./profile-edit">Редактирование данных профиля</a></li>
+                <li><a href="./profile-edit-pass">Редактирование пароля профиля</a></li>
+                <li><a href="./404">404 (500)</a></li>
+
+block scripts

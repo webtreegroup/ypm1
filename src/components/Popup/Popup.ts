@@ -9,7 +9,6 @@ export class Popups {
     }
 
     show(){
-        console.log('ok')
         this._elem?.classList.add('popup-wrap_active')
     }
 

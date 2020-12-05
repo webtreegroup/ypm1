@@ -1,9 +1,8 @@
 "use strict";
 const controls = document.querySelectorAll('.input-control input');
 function handleControlChangeOrFocus(e) {
-    var _a;
     const elem = e.target;
-    const currentValue = (_a = e.target) === null || _a === void 0 ? void 0 : _a.value;
+    const currentValue = elem === null || elem === void 0 ? void 0 : elem.value;
     if (currentValue) {
         elem.classList.add('touched');
     }

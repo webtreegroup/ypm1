@@ -9,7 +9,6 @@ export class Popups {
     }
     show() {
         var _a;
-        console.log('ok');
         (_a = this._elem) === null || _a === void 0 ? void 0 : _a.classList.add('popup-wrap_active');
     }
     hide() {

@@ -1,0 +1,9 @@
+section.profile-options__fields
+    form.ajax-form
+        each field in fields
+            if !isEditMode
+                +InputControl({...field, disabled:  true, className: 'touched'})
+            else
+                +InputControl({...field, className: 'touched'})
+        +Button('primary', 'submit')
+            | Сохранить
