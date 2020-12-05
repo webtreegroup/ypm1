@@ -1,16 +1,31 @@
 extends ../default.pug
 
 append styles
-    link(rel='stylesheet' href='../../css/Pages/Profile/Profile.css')
+    link(rel='stylesheet' href='/build/css/Pages/Profile/Profile.css')
 
 block content
     .profile-page
         aside.profile-page__out
-            include ../../svg/icon-back.svg
+            a(href='#')
+                include ../../svg/icon-back.svg
 
         main.profile-options
             header.profile-options__image
                 include ../../svg/icon-user.svg
 
             section.profile-options__fields
-                +InputControl('email', 'Почта', 'email')
+                each field in fields
+                    +InputControl(field)
+
+            footer.profile-options__actions
+                ul
+                    li
+                        a(href='#' class='edit-user-image') Изменить изображение
+                    li
+                        a(href='./profile-edit.html') Изменить данные
+                    li
+                        a(href='./profile-edit-pass.htm') Изменить пароль
+                    li
+                        a(href='./login.htm') <b>Выйти</b>
+
+    +Popup({title: 'Загрузите файл', sendBtnText: 'Поменять', id: 'edit-user-image', isClosable: true})

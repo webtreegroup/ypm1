@@ -1,6 +1,9 @@
-mixin Popup(title = 'Заголовок окна', className, sendBtnText)
-    div(class=`popup-wrap ${className}`)
+mixin Popup({title = 'Заголовок окна', isActive, sendBtnText, id, isClosable})
+    div(id=id class=`popup-wrap${isActive ? ' popup-wrap_active' : ''}`)
         .popup
+            if isClosable
+                +Button('no-style popup__close')
+                    include ../../svg/icon-cancel.svg
             h3.popup__title #{title}
 
             .popup__body

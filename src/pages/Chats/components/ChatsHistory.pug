@@ -1,11 +1,11 @@
-main(class=`chat-history ${!messagesData ? 'chat-history_not-selected' : '' }`)
-    if messagesData
+main(class=`chat-history ${!MESSAGES_DATA ? 'chat-history_not-selected' : '' }`)
+    if MESSAGES_DATA
         include ChatHeader.pug
         
         section.chat-history__body
             .chat-history__group
                 .chat-history__time 19 июня
-                each message in messagesData
+                each message in MESSAGES_DATA
                     +ChatMessage(message)
                         | !{message.text}
 

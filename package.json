@@ -2,7 +2,8 @@
   "name": "ypm1",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "server.ts",
+  "type": "module",
   "scripts": {
     "scss": "node-sass --output-style expanded -o build/css src",
     "autoprefixer": "postcss -u autoprefixer -r build/css",

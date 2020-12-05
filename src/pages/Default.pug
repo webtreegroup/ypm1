@@ -10,17 +10,16 @@ html(lang='ru')
         
         block styles
             link(href='https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet')
-            link(rel='stylesheet' href='../../css/core/style/reset-style.css')
-            link(rel='stylesheet' href='../../css/core/style/app.css')
-            link(rel='stylesheet' href='../../css/components/Popup/Popup.css')
-            link(rel='stylesheet' href='../../css/components/button/Button.css')
-            link(rel='stylesheet' href='../../css/components/InputControl/InputControl.css')
+            link(rel='stylesheet' href='/build/css/core/style/reset-style.css')
+            link(rel='stylesheet' href='/build/css/core/style/app.css')
+            link(rel='stylesheet' href='/build/css/components/Popup/Popup.css')
+            link(rel='stylesheet' href='/build/css/components/button/Button.css')
+            link(rel='stylesheet' href='/build/css/components/InputControl/InputControl.css')
         title #{title}
 
     body
         block content
 
         block scripts
-            script(src='../../js/controls.js')
-            script(src='../../js/popups.js')
-            script(src='../../js/app.js')
+            script(src='/build/src/components/InputControl/InputControl.js')
+            script(type="module" src='/build/src/app.js')

@@ -1,4 +1,4 @@
-mixin InputControl(name, label, inputType, value, disabled)
+mixin InputControl({name, label, inputType = 'text', value, disabled, className})
     .input-control
-        input(type=inputType name=name id=name value=value disabled=disabled)
+        input(type=inputType name=name id=name value=value disabled=disabled class=className)
         label(for=name) #{label}

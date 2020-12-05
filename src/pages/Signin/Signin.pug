@@ -1,0 +1,13 @@
+extends ../default.pug
+
+block content
+    .signin-page
+        +Popup({title: 'Регистрация', isActive: true})
+            form.ajax-form
+                each field in fields
+                    +InputControl(field)
+
+                .popup__footer
+                    +Button('primary', 'submit')
+                        | Зарегистрироваться
+                    a(href='./login') Войти
